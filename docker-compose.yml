@@ -2,8 +2,11 @@ version: "3.7"
 
 services:
   gateway:
-    image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
+    image: jhc/gateway:${TAG:-v1.0.0}
+    build:
+      context: ./gateway/
     restart: "unless-stopped"
+    container_name: jhc-gateway
     depends_on:
       - frontend
       - backend
@@ -11,22 +14,30 @@ services:
       - "80:80"
 
   frontend:
-    image: openmrs/openmrs-reference-application-3-frontend:${TAG:-qa}
+    image: jhc/frontend:${TAG:-v1.0.0}
+    build:
+      context: ./frontend/
     restart: "unless-stopped"
+    container_name: jhc-frontend
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
-      SPA_CONFIG_URLS: /openmrs/spa/config-core_demo.json
+      SPA_CONFIG_URLS: /openmrs/spa/jhc_config.json
       SPA_DEFAULT_LOCALE:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
       timeout: 5s
     depends_on:
       - backend
+    volumes:
+      - ./frontend/jhc_config.json:/usr/share/nginx/html/jhc_config.json
 
   backend:
-    image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
+    image: jhc/backend:${TAG:-v1.0.0}
+    build:
+      context: .
     restart: "unless-stopped"
+    container_name: jhc-backend
     depends_on:
       - db
     environment:
@@ -42,11 +53,15 @@ services:
       timeout: 5s
     volumes:
       - openmrs-data:/openmrs/data
+      - ./distro/configuration/:/openmrs/distribution/openmrs_config
+    env_file:
+      - .env
 
   # MariaDB
   db:
     image: mariadb:10.11.7
     restart: "unless-stopped"
+    container_name: jhc-mariadb
     command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci"
     healthcheck:
       test: "mysql --user=${OMRS_DB_USER:-openmrs} --password=${OMRS_DB_PASSWORD:-openmrs} --execute \"SHOW DATABASES;\""

@@ -1,0 +1,45 @@
+{
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#419abc",
+    "Brand color #2": "#41af4c",
+    "Brand color #3": "#000000"
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "patient-chart-dashboard-slot": {
+        "remove": [
+          "immunization-summary-dashboard"
+        ]
+      }
+    },
+    "logo": {
+      "src": "jhc-logo-grayscale.svg"
+    }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "jhc-logo.svg",
+      "alt": "jhc-logo"
+    }
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "jhc-logo-grayscale.svg",
+      "alt": "jhc-logo"
+    }
+  },
+  "@openmrs/esm-patient-vitals-app": {
+    "concepts": {
+      "temperatureUuid": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "systolicBloodPressureUuid": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "diastolicBloodPressureUuid": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "pulseUuid": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "oxygenSaturationUuid": "5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "weightUuid": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "heightUuid":"5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "respiratoryRateUuid": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "midUpperArmCircumferenceUuid": "1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "generalPatientNoteUuid":"165095AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  }
+}

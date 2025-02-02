@@ -1,61 +1,99 @@
-# OpenMRS 3.0 Reference Application
+# JHC OpenMRS 3.0 Application
 
-This project holds the build configuration for the OpenMRS 3.0 reference application, found on
-https://dev3.openmrs.org and https://o3.openmrs.org.
+A containerized deployment of OpenMRS 3.0 with custom configurations for the JHC healthcare system.
 
-## Quick start
+## 🌐 Overview
 
-### Package the distribution and prepare the run
+This repository contains the build configuration for the JHC OpenMRS 3.0 application.
 
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Docker and Docker Compose
+- Git
+- OpenMRS user credentials
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/miirochristopher/jahdiel-org-emrs.git
+   cd jahdiel-org-emrs
+   ```
+
+2. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Configure the following in `.env`:
+  - SMS API credentials (USERNAME and API KEY)
+  - OpenMRS user credentials
+
+4. Start the application:
+   ```bash
+   docker compose up --build
+   ```
+
+## 💾 Database Management
+
+### Backup and Restore
+
+To restore from a backup:
+
+1. Place your SQL backup file in the `db` folder
+2. Update the following configurations in `.env`:
+   ```env
+   OMRS_CONFIG_AUTO_UPDATE_DATABASE=false
+   OMRS_CONFIG_CREATE_TABLES=false
+   ```
+3. Restart the application:
+   ```bash
+   docker compose down
+   docker compose up --build
+   ```
+
+### Creating a Backup
+
+```bash
+docker exec jhc-mariadb mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD openmrs > backup_$(date +%Y%m%d).sql
 ```
-docker compose build
+
+## 🧹 Cleanup
+
+To completely remove the application and its volumes:
+
+```bash
+docker compose -p jhc_emr down -v
 ```
 
-### Run the app
+## 🔧 Configuration
 
-```
-docker compose up
-```
+Key configuration files:
 
-The new OpenMRS UI is accessible at http://localhost/openmrs/spa
+- `docker-compose.yml`: Container orchestration
+- `.env`: Environment variables
+- `db/`: Database initialization scripts
 
-OpenMRS Legacy UI is accessible at http://localhost/openmrs
+## 🛟 Troubleshooting
 
-## Overview
+Common issues and solutions:
 
-This distribution consists of four images:
+1. Database connection errors:
+  - Verify MariaDB container is running
+  - Ensure proper network connectivity
 
-* db - This is just the standard MariaDB image supplied to use as a database
-* backend - This image is the OpenMRS backend. It is built from the main Dockerfile included in the root of the project and
-  based on the core OpenMRS Docker file. Additional contents for this image are drawn from the `distro` sub-directory which
-  includes a full Initializer configuration for the reference application intended as a starting point.
-* frontend - This image is a simple nginx container that embeds the 3.x frontend, including the modules described in  the
-  `frontend/spa-build-config.json` file.
-* proxy - This image is an even simpler nginx reverse proxy that sits in front of the `backend` and `frontend` containers
-  and provides a common interface to both. This helps mitigate CORS issues.
+## 📚 Additional Resources
 
-## Contributing to the configuration
+- [OpenMRS Documentation](https://wiki.openmrs.org/)
+- [Docker Documentation](https://docs.docker.com/)
+- [MariaDB Documentation](https://mariadb.org/documentation/)
 
-This project uses the [Initializer](https://github.com/mekomsolutions/openmrs-module-initializer) module
-to configure metadata for this project. The Initializer configuration can be found in the configuration
-subfolder of the distro folder. Any files added to this will be automatically included as part of the
-metadata for the RefApp.
+## 🤝 Contributing
 
-Eventually, we would like to split this metadata into two packages:
-
-* `openmrs-core`, which will contain all the metadata necessary to run OpenMRS
-* `openmrs-demo`, which will include all of the sample data we use to run the RefApp
-
-The `openmrs-core` package will eventually be a standard part of the distribution, with the `openmrs-demo`
-provided as an optional add-on. Most data in this configuration _should_ be regarded as demo data. We
-anticipate that implementation-specific metadata will replace data in the `openmrs-demo` package,
-though they may use that metadata as a starting point for that customization.
-
-To help us keep track of things, we ask that you suffix any files you add with either
-`-core_demo` for files that should be part of the demo package and `-core_data` for
-those that should be part of the core package. For example, a form named `test_form.json` would become
-`test_core-core_demo.json`.
-
-Frontend configuration can be found in `frontend/config-core_demo.json`.
-
-Thanks!
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
