@@ -1,5 +1,3 @@
-version: "3.7"
-
 services:
   gateway:
     image: jhc/gateway:${TAG:-v1.0.0}
