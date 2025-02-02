@@ -26,12 +26,8 @@ This repository contains the build configuration for the JHC OpenMRS 3.0 applica
    ```bash
    cp .env.example .env
    ```
-
-3. Configure the following in `.env`:
-  - SMS API credentials (USERNAME and API KEY)
-  - OpenMRS user credentials
-
-4. Start the application:
+   
+3. Start the application:
    ```bash
    docker compose up --build
    ```
