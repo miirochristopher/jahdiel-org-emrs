@@ -29,7 +29,7 @@ This repository contains the build configuration for the JHC OpenMRS 3.0 applica
    
 3. Start the application:
    ```bash
-   docker compose up --build
+   docker compose up -d --build
    ```
 
 ## 💾 Database Management

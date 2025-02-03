@@ -1,27 +1,15 @@
 <addressConfiguration>
-  <wipe>true</wipe>
   <addressComponents>
     <addressComponent>
       <field>COUNTRY</field>
       <nameMapping>Location.country</nameMapping>
       <sizeMapping>40</sizeMapping>
+      <elementDefault>Uganda</elementDefault>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
-      <field>STATE_PROVINCE</field>
-      <nameMapping>Location.province</nameMapping>
-      <sizeMapping>40</sizeMapping>
-      <requiredInHierarchy>true</requiredInHierarchy>
-    </addressComponent>
-    <addressComponent>
-      <field>COUNTY_DISTRICT</field>
+      <field>ADDRESS_2</field>
       <nameMapping>Location.district</nameMapping>
-      <sizeMapping>40</sizeMapping>
-      <requiredInHierarchy>true</requiredInHierarchy>
-    </addressComponent>
-    <addressComponent>
-      <field>ADDRESS_1</field>
-      <nameMapping>impl.commune</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
@@ -33,13 +21,12 @@
     </addressComponent>
   </addressComponents>
   <lineByLineFormat>
-    <string>cityVillage, address1</string>
-    <string>countyDistrict, stateProvince</string>
-    <string>country</string>
+    <string>address2</string>
+    <string>cityVillage country</string>
   </lineByLineFormat>
   <addressHierarchyFile>
     <filename>addresshierarchy.csv</filename>
     <entryDelimiter>,</entryDelimiter>
-    <identifierDelimiter>%</identifierDelimiter>
+    <identifierDelimiter>^</identifierDelimiter>
   </addressHierarchyFile>
 </addressConfiguration>

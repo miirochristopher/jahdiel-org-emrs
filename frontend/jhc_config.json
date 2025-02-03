@@ -1,8 +1,8 @@
 {
   "@openmrs/esm-styleguide": {
     "Brand color #1": "#419abc",
-    "Brand color #2": "#41af4c",
-    "Brand color #3": "#000000"
+    "Brand color #2": "#000000",
+    "Brand color #3": "#41af4c"
   },
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
