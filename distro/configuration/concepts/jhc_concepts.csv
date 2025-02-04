@@ -1,0 +1,7 @@
+uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,Mappings|SAME-AS|PIH|Name,Mappings|NARROWER-THAN|PIH|Name,Mappings|BROADER-THAN|PIH|Name,Mappings|SAME-AS|PIH|Number,Mappings|NARROWER-THAN|PIH|Number,Mappings|BROADER-THAN|PIH|Number,Mappings|SAME-AS|CIEL,Mappings|NARROWER-THAN|CIEL,Mappings|BROADER-THAN|CIEL,Mappings|SAME-AS|AMPATH,Mappings|SAME-AS|org.openmrs.module.emrapi,Absolute high,Critical high,Normal high,Absolute low,Critical low,Normal low,Units,Display precision,Allow decimals,Complex data handler
+26fede17-3317-9054-70c1-ac41dea7556b,,Systolic Blood Pressure,Systolic Blood Pressure,,Misc,Numeric,,,,,,,,,,,,,,,,,,,,mm Hg,,1,
+8ee724a5-250c-0955-9336-a42bd3041b6a,,Diastolic Blood Pressure,Diastolic Blood Pressure,,Misc,Numeric,,,,,,,,,,,,,,,,,,,,mm Hg,,1,
+c36bc411-3f10-11e4-adec-0800271c1b75,,Pulse,Pulse,,Misc,Numeric,,,,,,,,,,,,,,,,72,,,72,/min,,1,
+075c2485-ea84-4e3b-8df8-638ef18edf41,,Oxygen Saturation,,,Misc,Numeric,,,,,,,,,,,,,,,,,,,,,,1,
+6a2c1bf8-27d4-42b9-a1aa-aa9860db8609,,Respiratory Rate,,,Misc,Numeric,,,,,,,,,,,,,,,,,,,,,,1,
+90f53912-95d5-4b5c-a9eb-81f3f937225e,,"IMAM, MUAC",MUAC,,Misc,Numeric,,,,,,,,,,,,,,,,,,,,,,1,
