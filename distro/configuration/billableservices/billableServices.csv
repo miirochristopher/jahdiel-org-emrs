@@ -1,5 +1,11 @@
 Uuid, Void/Retire, Service Name, Short Name, Concept, Service Type, Service Status
-44ebd6cd-04ad-4eba-8ce1-0de4564bfd17,, Antenatal care, ANTC, 1592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Antenatal Services, Enabled
-a0f7d8a1-4fa2-418c-aa8a-9b358f43d605,, Orthopedic Service, OTHS, 164949AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Orthopedic Services, Enabled
-16435ab4-27c3-4d91-b21e-52819bd654d8,, Nutrition counseling, NUC, 1380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Nutrition Services, Enabled
-360fab13-d92b-4a9f-ad4e-0ac223e7f54c,, OPD consultation, OPDC, 160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Orthopedic Services, Enabled
+9f941776-18a5-4e01-bf43-c25d078a5d9a,, Lifestyle Coaching, LFT, 1592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Lifestyle Coaching, Enabled
+afb45d6e-d69c-460c-b931-d8cf5e089dbf,, Weight Management, WGM, 164949AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Weight Management, Enabled
+83a98b34-ac15-4b10-bce6-c652d0e2c487,, Nutrition Consulting, NUC, 1380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Nutrition Consulting, Enabled
+e64f24d5-8231-4e0b-b4b2-e5b022f58b9c,, Mindfulness Training, MDT, 160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Mindfulness Training, Enabled
+d13ecde0-400f-49f4-bd86-5ca40f0e5cd5,, Stress Management, STR, 160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Stress Management, Enabled
+681a1077-588e-4522-8e48-d4f0346bd393,, Wellness Workshops, WLW, 160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, Wellness Workshops, Enabled
+
+
+
+
